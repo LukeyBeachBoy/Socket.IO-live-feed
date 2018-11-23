@@ -28,12 +28,13 @@ app.post('/users/', (req, res) => {
     console.log(req);
     var user = req.body;
     if (user.name === undefined || user.age === undefined){
-        res.status(400).send('No user was submitted');
+        res.redirect('/');
     }
     var newUser = new User(user);
     newUser.save().catch((err) => {
         console.log("There was an error with the user input", err);
     });
+    res.redirect('/');
 });
 
 
