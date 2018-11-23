@@ -1,0 +1,10 @@
+.inline-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+    
+}
+.inline-flex>h5{
+    margin-right: .5em;
+}

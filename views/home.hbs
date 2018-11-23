@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="jumbotron text-center">
+        <h1>Welcome to my app!</h1>
+    </div>
+    <div class="container-fluid text-center mx-auto col-sm-6">
+        <div class="card text-center">
+            <div class="card-header">
+                <h5 class="card-title">Your Users: </h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">This is where users will be shown</p>
+                <ul class="list-group list-group-flush">
+                    {{#each allUsers}}
+                    <li class="list-group-item user-block">
+                        <div class="inline-flex">
+                            <h5>User Name:</h5>{{name}}
+                        </div>
+                        <div class="inline-flex">
+                            <h5>Age:</h5>{{age}}
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+                <br>
+                <div class="form-row align-items-center">
+                    <div class="mx-auto">
+                        <div class="form-group text-center">
+                            <form action="/users" method="post">
+                                <label for="userInput">User Name</label>
+                                <input type="text" class="form-control text-center" id="userInput" name="name" aria-describedby="userNameHelp"
+                                    placeholder="Enter name for user">
+                                <small id="userNameHelp" class="form-text text-muted">Make it a sexy name</small>
+                                <br>
+                                <label for="ageInput">User Age</label>
+                                <input type="text" class="form-control text-center" id="userInput" name="age" aria-describedby="userAgeHelp"
+                                    placeholder="Enter age for user">
+                                <small id="userAgeHelp" class="form-text text-muted">Tell us how old they are</small>
+                        </div>
+                        <div class="inline-flex"><button type ="submit" class="btn btn-primary">Add User</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-muted">Luke is awesome</div>
+        </div>
+        <br>
+    </div>
+</body>
+
+</html>
