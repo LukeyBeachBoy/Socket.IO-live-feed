@@ -31,10 +31,8 @@ app.post('/users/', (req, res) => {
         res.status(400).send('No user was submitted');
     }
     var newUser = new User(user);
-    newUser.save().then((user) => {
-        res.send(user);
-    }).catch((err) => {
-        res.send(err);
+    newUser.save().catch((err) => {
+        console.log("There was an error with the user input", err);
     });
 });
 
