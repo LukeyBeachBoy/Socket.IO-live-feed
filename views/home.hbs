@@ -43,13 +43,11 @@
                         <div class="form-group text-center">
                             <form action="/users" method="post">
                                 <label for="userInput">User Name</label>
-                                <input type="text" class="form-control text-center" id="userInput" name="name" aria-describedby="userNameHelp"
-                                    placeholder="Enter name for user">
+                                <input required type="text" class="form-control text-center" id="userInput" name="name" aria-describedby="userNameHelp" placeholder="Enter name for user">
                                 <small id="userNameHelp" class="form-text text-muted">Make it a sexy name</small>
                                 <br>
                                 <label for="ageInput">User Age</label>
-                                <input type="text" class="form-control text-center" id="userInput" name="age" aria-describedby="userAgeHelp"
-                                    placeholder="Enter age for user">
+                                <input required type="text" class="form-control text-center" id="userInput" name="age" aria-describedby="userAgeHelp" placeholder="Enter age for user">
                                 <small id="userAgeHelp" class="form-text text-muted">Tell us how old they are</small>
                         </div>
                         <div class="inline-flex"><button type ="submit" class="btn btn-primary">Add User</button></div>
