@@ -18,14 +18,14 @@
     <div class="jumbotron text-center">
         <h1>Welcome to my app!</h1>
     </div>
-    <div class="container-fluid text-center mx-auto col-sm-6">
+    <div class="container-fluid text-center mx-auto col-sm-6 col-lg-3">
         <div class="card text-center">
             <div class="card-header">
                 <h5 class="card-title">Users: </h5>
             </div>
             <div class="card-body">
                 <p class="card-text">Here is a list of all users</p>
-                <ul class="list-group list-group-flush">
+                <ul class="list-group list-group-flush" id="userList">
                     {{#each allUsers}}
                     <li class="list-group-item user-block">
                         <div class="inline-flex">
@@ -43,14 +43,17 @@
                         <div class="form-group text-center">
                             <form action="/users" method="post">
                                 <label for="userInput">User Name</label>
-                                <input required type="text" class="form-control text-center" id="userInput" name="name" aria-describedby="userNameHelp" placeholder="Enter name for user">
+                                <input required type="text" class="form-control text-center" id="userInput" name="name"
+                                    aria-describedby="userNameHelp" placeholder="Enter name for user">
                                 <small id="userNameHelp" class="form-text text-muted">Make it a sexy name</small>
                                 <br>
                                 <label for="ageInput">User Age</label>
-                                <input required type="text" class="form-control text-center" id="userInput" name="age" aria-describedby="userAgeHelp" placeholder="Enter age for user">
+                                <input required type="text" class="form-control text-center" id="ageInput" name="age"
+                                    aria-describedby="userAgeHelp" placeholder="Enter age for user">
                                 <small id="userAgeHelp" class="form-text text-muted">Tell us how old they are</small>
                         </div>
-                        <div class="inline-flex"><button type ="submit" class="btn btn-primary">Add User</button></div>
+                        <div class="inline-flex"><button id="addUserButton" type="submit" class="btn btn-primary">Add
+                                User</button></div>
                         </form>
                     </div>
                 </div>
@@ -59,6 +62,8 @@
         </div>
         <br>
     </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/socket.js"></script>
 </body>
 
 </html>
